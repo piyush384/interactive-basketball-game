@@ -1,0 +1,136 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto; /* Allow vertical scrolling */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px; /* Limit the width for larger screens */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Add some padding */
+}
+
+.box {
+    width: 90vw; /* Make the box responsive */
+    max-width: 500px; /* Limit max width */
+    height: 90vw; /* Maintain aspect ratio */
+    max-height: 500px; /* Limit max height */
+    border: 2px solid #333;
+    position: relative;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.basket {
+    width: 100px;
+    height: 49px;
+    color: #fff;
+    background-color: #a52a2ac4;
+    border-radius: 0 0 30px 30px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    line-height: 40px;
+    z-index: 2;
+}
+
+.ball {
+    width: 8vw; /* Use viewport width for responsiveness */
+    height: 8vw; /* Use viewport width for responsiveness */
+    max-width: 40px; /* Set a maximum size */
+    max-height: 40px; /* Set a maximum size */
+    background-color: orange;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: left 0.1s ease, top 0.1s ease; /* Smooth transitions for left and top */
+    z-index: 2; /* Above webcam */
+}
+
+.barrier {
+    width: 2vw; /* Use viewport width for responsiveness */
+    height: 10vh; /* Use viewport height for responsiveness */
+    max-height: 100px; /* Set a maximum height */
+    background-color: red; /* Color of the barrier */
+    position: absolute;
+    z-index: 2; /* Above webcam */
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#score {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Button styles */
+.button-container {
+    margin: 20px 0;
+    display: flex; /* Align buttons in a row */
+    justify-content: center; /* Center buttons */
+}
+
+button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Timer styles */
+#timer {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+/* Webcam video styling */
+#webcam {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire area */
+    z-index: 1; /* Behind other elements */
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .ball {
+        width: 10vw; /* Adjust size for smaller screens */
+        height: 10vw; /* Adjust size for smaller screens */
+    }
+
+    .barrier {
+        width: 4vw; /* Adjust size for smaller screens */
+        height: 15vh; /* Adjust size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    button {
+        padding: 8px 16px; /* Adjust button size for small screens */
+        font-size: 14px; /* Adjust font size for small screens */
+    }
+
+    #timer {
+        font-size: 20px; /* Adjust timer font size for small screens */
+    }
+
+    #score {
+        font-size: 16px; /* Adjust score font size for small screens */
+    }
+}
